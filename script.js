@@ -16,11 +16,11 @@ function divide(a, b){
 
 function operate(a, operator, b){
     if(operator == '/'){
-        tempNum =  divide(a, b);
+       tempNum =  divide(a, b);
         display(tempNum);
     }
     else if(operator == '+'){
-        tempNum =  add(a, b);
+       tempNum =  add(a, b);
         display(tempNum);
     }
     else if(operator == '-'){
@@ -28,8 +28,10 @@ function operate(a, operator, b){
         display(tempNum);
     }
     else if(operator == '*'){
-        tempNum = multiply(a, b); 
-        display(tempNum);}
+       tempNum = multiply(a, b); 
+        display(tempNum);
+    }
+    
 }
 let tempNum = '',
     firstNums = '',
@@ -38,7 +40,11 @@ let tempNum = '',
 
 function display(num){
   const display = document.querySelector('#display');
-  display.textContent = num;
+  display.textContent = Math.round(num *10000000)/10000000;//rounds decimal to 7 spots.
+  if(display.textContent == "NaN"){
+      display.style.fontSize = "40px";
+      display.textContent = "Can't do that, dummy";
+    }
 }
 
 let btn0 = document.querySelector("#zero");
@@ -150,7 +156,8 @@ let btnEqual = document.querySelector("#equal");
 btnEqual.addEventListener('click', (e) => {
     secondNums = tempNum;
     operate(firstNums, operator, secondNums);
-});
+
+    });
 
 let btnClear = document.querySelector("#clear");
 btnClear.addEventListener('click', (e) => {
