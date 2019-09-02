@@ -17,88 +17,88 @@ function divide(a, b){
 function operate(a, operator, b){
     if(operator == '/'){
         tempNum =  divide(a, b);
-        display();
+        display(tempNum);
     }
     else if(operator == '+'){
         tempNum =  add(a, b);
-        display();
+        display(tempNum);
     }
     else if(operator == '-'){
         tempNum = subtract(a, b);
-        display();
+        display(tempNum);
     }
     else if(operator == '*'){
         tempNum = multiply(a, b); 
-        display();}
+        display(tempNum);}
 }
 let tempNum = '',
     firstNums = '',
     secondNums = '',
     operator = '';
 
-function display(){
+function display(num){
   const display = document.querySelector('#display');
-  display.textContent = tempNum;
+  display.textContent = num;
 }
 
 let btn0 = document.querySelector("#zero");
 btn0.addEventListener('click', (e) => {
     tempNum += '0';
-    display();
+    display(tempNum);
 });
 
 let btn1 = document.querySelector("#one");
 btn1.addEventListener('click', (e) => {
     tempNum += '1';
-    display();
+    display(tempNum);
 });
 
 let btn2 = document.querySelector("#two");
 btn2.addEventListener('click', (e) => {
     tempNum += '2';
-    display();
+    display(tempNum);
 });
 
 let btn3 = document.querySelector("#three");
 btn3.addEventListener('click', (e) => {
     tempNum += '3';
-    display();
+    display(tempNum);
 });
 
 let btn4 = document.querySelector("#four");
 btn4.addEventListener('click', (e) => {
     tempNum += '4';
-    display();
+    display(tempNum);
 });
 
 let btn5 = document.querySelector("#five");
 btn5.addEventListener('click', (e) => {
     tempNum += '5';
-    display();
+    display(tempNum);
 });
 
 let btn6 = document.querySelector("#six");
 btn6.addEventListener('click', (e) => {
     tempNum += '6';
-    display();
+    display(tempNum);
 });
 
 let btn7 = document.querySelector("#seven");
 btn7.addEventListener('click', (e) => {
     tempNum += '7';
-    display();
+    display(tempNum);
 });
 
 let btn8 = document.querySelector("#eight");
 btn8.addEventListener('click', (e) => {
     tempNum += '8';
-    display();
+    display(tempNum);
 });
 
 let btn9 = document.querySelector("#nine");
 btn9.addEventListener('click', (e) => {
     tempNum += '9';
-    display();
+    display(tempNum);
 });
 
 let btnDiv = document.querySelector("#divide");
@@ -133,4 +133,13 @@ let btnEqual = document.querySelector("#equal");
 btnEqual.addEventListener('click', (e) => {
     secondNums = tempNum;
     operate(firstNums, operator, secondNums);
+});
+
+let btnClear = document.querySelector("#clear");
+btnClear.addEventListener('click', (e) => {
+    secondNums = '';
+    firstNums = '';
+    operator = '';
+    tempNum = '';
+    display(0);
 });
