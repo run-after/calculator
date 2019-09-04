@@ -158,6 +158,14 @@ btn9.addEventListener('click', (e) => {
     display(tempNum);
 });
 
+let btnDot = document.querySelector("#dot");
+btnDot.addEventListener('click', (e) => {
+    
+    tempNum += '.';
+
+    display(tempNum);
+});
+
 let btnDiv = document.querySelector("#divide");
 btnDiv.addEventListener('click', (e) => {
     
